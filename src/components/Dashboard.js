@@ -13,7 +13,7 @@ const Dashboard = () => {
 
         // Fetch banner data on initial load and when it gets updated (controlled by 'reload' state)
         useEffect(() => {
-            axios.get('http://localhost:4000/api/banner').then((response) => {
+            axios.get('https://banner-takeuforward-backend.onrender.com/api/banner').then((response) => {
                 if (response && response.data) {
                     const { description, link, timer } = response.data;
                     setBannerData({
@@ -49,7 +49,7 @@ const Dashboard = () => {
                 });
             } else {
 
-                axios.post('http://localhost:4000/api/banner', {
+                axios.post('https://banner-takeuforward-backend.onrender.com/api/banner', {
                     description,
                     link,
                     timer,
